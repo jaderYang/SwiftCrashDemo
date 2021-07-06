@@ -18,23 +18,13 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-//        if flag {
-//            testColdStartUp()
-//            flag = !flag
-//        }
+        testColdStartUp()
     }
     
     func testColdStartUp() {
+        navigationController?.pushViewController(TestViewController(), animated: false)
         navigationController?.pushViewController(TestViewController(), animated: true)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.navigationController?.pushViewController(TestViewController(), animated: true)
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.navigationController?.pushViewController(TestViewController(), animated: true)
-        }
+        navigationController?.pushViewController(TestViewController(), animated: true)
     }
 
 }

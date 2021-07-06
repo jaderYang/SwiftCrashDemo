@@ -19,21 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = rootNav
         window!.makeKeyAndVisible()
         window!.backgroundColor = .white
-        testColdStartUp(rootNav)
         return true
-    }
-    
-    
-    func testColdStartUp(_ nav: UINavigationController) {
-        nav.pushViewController(TestViewController(), animated: true)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            nav.pushViewController(TestViewController(), animated: true)
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            nav.pushViewController(TestViewController(), animated: true)
-        }
     }
 }
 
